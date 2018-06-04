@@ -91,13 +91,11 @@
                         <?php if(is_array($cateres)): $i = 0; $__LIST__ = $cateres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                             <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
                             <td>
-                                <input name="ids[]" value="59" type="hidden">
                                 <input class="common-input sort-input" name="ord[]" value="0" type="text">
                             </td>
                             <td><?php echo ($vo["id"]); ?></td>
                             <td title="内容"><a target="_blank" href="#" title="内容"><?php echo ($vo["catename"]); ?></a> …
                             </td>
-
                             <td>
                                 <a class="link-update" href="#">修改</a>
                                 <a class="link-del" href="#">删除</a>
