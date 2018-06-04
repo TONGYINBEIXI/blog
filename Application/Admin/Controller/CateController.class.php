@@ -1,8 +1,12 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
+header("Content-Type: text/html;charset=utf-8");
 class CateController extends Controller {
     public function lst(){
+        $cate=D('cate');
+        $cateres=$cate->select(); //从数据库查询数据，dump可以打印出来看看
+      $this->assign('caters',$cateres); //通过assign来把后台数据在前端展示
         $this->display();
     }
 

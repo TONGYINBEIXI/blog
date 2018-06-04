@@ -85,25 +85,24 @@
                             <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
                             <th>排序</th>
                             <th>ID</th>
-                            <th>标题</th>
+                            <th>栏目名称</th>
                             <th>操作</th>
                         </tr>
-                        <tr>
+                        <?php if(is_array($cateres)): $i = 0; $__LIST__ = $cateres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                             <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
                             <td>
                                 <input name="ids[]" value="59" type="hidden">
                                 <input class="common-input sort-input" name="ord[]" value="0" type="text">
                             </td>
-                            <td>59</td>
-                            <td title="内容"><a target="_blank" href="#" title="内容">内容</a> …
+                            <td><?php echo ($vo["id"]); ?></td>
+                            <td title="内容"><a target="_blank" href="#" title="内容"><?php echo ($vo["catename"]); ?></a> …
                             </td>
 
                             <td>
                                 <a class="link-update" href="#">修改</a>
                                 <a class="link-del" href="#">删除</a>
                             </td>
-                        </tr>
-
+                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                     </table>
                     <div class="list-page"> 2 条 1/1 页</div>
                 </div>

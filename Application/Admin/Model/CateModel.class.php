@@ -8,6 +8,7 @@ class CateModel extends Model {
                  *regex	正则验证，定义的验证规则是一个正则表达式（默认）
                  * */
         array('catename','require','添加栏目不能为空',1,'regex',3), // 在新增的时候验证name字段是否唯一
+        array('catename','','栏目名称已经存在！',1,'unique',3), // 在新增的时候验证name字段是否唯一
 
     );
 
