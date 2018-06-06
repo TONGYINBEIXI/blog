@@ -38,11 +38,12 @@
             </div>
         </div>
         <div class="result-wrap">
-            <form name="myform" id="myform" method="post">
+            <form name="myform" id="myform" action="__CONTROLLER__/sort" method="post">
                 <div class="result-title">
                     <div class="result-list">
                         <a href="__CONTROLLER__/add"><i class="icon-font"></i>新增栏目</a>
-                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>
+                            <input class="btn btn-primary btn2" type="submit" value="更新排序"></a>
                     </div>
                 </div>
                 <div class="result-content">
@@ -58,7 +59,7 @@
                         <tr>
                             <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
                             <td>
-                                <input class="common-input sort-input" name="ord[]" value="0" type="text">
+                                <input class="common-input sort-input" name="{$vo.id}" value="{$vo.sort}" type="text">
                             </td>
                             <td>{$vo.id}</td>
                             <td title="内容"><a target="_blank" href="#" title="内容">{$vo.catename}</a> …

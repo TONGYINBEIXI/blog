@@ -5,7 +5,7 @@ header("Content-Type: text/html;charset=utf-8");
 class CateController extends Controller {
     public function lst(){
         $cate=D('cate');
-        $cateres=$cate->select(); //从数据库查询数据，dump可以打印出来看看
+        $cateres=$cate->order('sort asc')->select(); //从数据库查询数据，dump可以打印出来看看
       $this->assign('cateres',$cateres); //通过assign来把后台数据在前端展示
         $this->display();
     }
@@ -35,5 +35,13 @@ class CateController extends Controller {
     }
     public function del(){
 
+    }
+
+    public function  sort(){
+       $cate=D('cate');
+       foreach($_POST as $id =>$sort){
+           $cate->where(array('id'=>$id))->setField('sort',$sort);
+       }
+           $this->success('排序成功',U('lst'));
     }
 }

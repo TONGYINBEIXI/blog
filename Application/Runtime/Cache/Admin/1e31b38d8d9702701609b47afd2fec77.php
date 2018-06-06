@@ -72,11 +72,12 @@
             </div>
         </div>
         <div class="result-wrap">
-            <form name="myform" id="myform" method="post">
+            <form name="myform" id="myform" action="/index.php/Admin/Cate/sort" method="post">
                 <div class="result-title">
                     <div class="result-list">
                         <a href="/index.php/Admin/Cate/add"><i class="icon-font"></i>新增栏目</a>
-                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>
+                            <input class="btn btn-primary btn2" type="submit" value="更新排序"></a>
                     </div>
                 </div>
                 <div class="result-content">
@@ -91,7 +92,7 @@
                         <?php if(is_array($cateres)): $i = 0; $__LIST__ = $cateres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                             <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
                             <td>
-                                <input class="common-input sort-input" name="ord[]" value="0" type="text">
+                                <input class="common-input sort-input" name="<?php echo ($vo["id"]); ?>" value="<?php echo ($vo["sort"]); ?>" type="text">
                             </td>
                             <td><?php echo ($vo["id"]); ?></td>
                             <td title="内容"><a target="_blank" href="#" title="内容"><?php echo ($vo["catename"]); ?></a> …
